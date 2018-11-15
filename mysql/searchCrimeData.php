@@ -23,7 +23,7 @@ $south = $y - 5000;
 $query = "SELECT x, y FROM crime WHERE (x < $east AND x > $west) AND (y < $north AND y > $south)";
 $result = $conn->query($query);
 if($result){
-  $crimes = $result->fetchAll();
+  $crimes = $result->fetchAll(PDO::FETCH_CLASS);
 
   echo json_encode($crimes);
 } else {
