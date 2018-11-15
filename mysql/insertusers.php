@@ -12,7 +12,8 @@ catch(PDOException $e)
 }
 $email =$_POST['email'];
 $password =$_POST['password'];
-$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+$fullname=$_POST['full_name'];
+$query = "INSERT INTO users (email, password, full_name) VALUES ('$email', '$password', '$fullname')";
 
 $result = $conn->query($query);
 if($result){
