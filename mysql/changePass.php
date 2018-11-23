@@ -11,17 +11,11 @@ catch(PDOException $e)
 {
     echo "Error: " .$e->getMessage();
 }
-$x =$_POST['x'];
-$y =$_POST['y'];
-
-$east = $x + 1000;
-$west = $x - 1000;
-$north = $y + 1000;
-$south = $y - 1000;
+$uId =$_POST['userId'];
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "SELECT x, y, type, hundred_block, neighbourhood FROM crime WHERE (x < $east AND x > $west) AND (y < $north AND y > $south) LIMIT 10";
+$query = "UPDATE users SET email = 'email@email.com' WHERE id = 3;";
 $result = $conn->query($query);
 if($result){
   $crimes = $result->fetchAll(PDO::FETCH_CLASS);
