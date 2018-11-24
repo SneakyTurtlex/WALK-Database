@@ -12,15 +12,14 @@ catch(PDOException $e)
     echo "Error: " .$e->getMessage();
 }
 $uId =$_POST['userId'];
+$uEmail =$_POST['userEmail'];
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "UPDATE users SET email = 'email@email.com' WHERE id = 3;";
+$query = "UPDATE users SET email = '$uEmail' WHERE id = '$uId';";
 $result = $conn->query($query);
 if($result){
-  $crimes = $result->fetchAll(PDO::FETCH_CLASS);
-
-  echo json_encode($crimes);
+  echo json_encode(true);
 } else {
   echo json_encode (false);
 }
