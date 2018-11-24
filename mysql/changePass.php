@@ -16,7 +16,7 @@ $newPass=$_POST['userPass'];
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "UPDATE users SET password='$newPass' WHERE id = ''$uId';";
+$query = "UPDATE users SET password='$newPass' WHERE id = '$uId';";
 $result = $conn->query($query);
 if($result){
   echo json_encode(true);
