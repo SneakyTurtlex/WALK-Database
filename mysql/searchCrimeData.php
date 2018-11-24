@@ -14,14 +14,14 @@ catch(PDOException $e)
 $x =$_POST['x'];
 $y =$_POST['y'];
 
-$east = $x + 1000;
-$west = $x - 1000;
-$north = $y + 1000;
-$south = $y - 1000;
+$east = $x + 2000;
+$west = $x - 2000;
+$north = $y + 2000;
+$south = $y - 2000;
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "SELECT x, y, type, hundred_block, neighbourhood FROM crime WHERE (x < $east AND x > $west) AND (y < $north AND y > $south) LIMIT 10";
+$query = "SELECT x, y, type, hundred_block, neighbourhood FROM crime WHERE (x < $east AND x > $west) AND (y < $north AND y > $south) LIMIT 20";
 $result = $conn->query($query);
 if($result){
   $crimes = $result->fetchAll(PDO::FETCH_CLASS);
