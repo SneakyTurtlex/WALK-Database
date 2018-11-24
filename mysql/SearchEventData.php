@@ -24,9 +24,9 @@ $south = $y - 0.016;
 $query = "SELECT lng, lat, type, hundred_block, neighbourhood FROM events_update WHERE (lng < $east AND lng > $west) AND (y < $north AND y > $south) LIMIT 10";
 $result = $conn->query($query);
 if($result){
-  $crimes = $result->fetchAll(PDO::FETCH_CLASS);
+  $events = $result->fetchAll(PDO::FETCH_CLASS);
 
-  echo json_encode($crimes);
+  echo json_encode($events);
 } else {
   echo json_encode (false);
 }
