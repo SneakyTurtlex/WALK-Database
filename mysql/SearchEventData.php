@@ -14,10 +14,10 @@ catch(PDOException $e)
 $x =$_POST['x'];
 $y =$_POST['y'];
 
-$east = $x - 0.016;
-$west = $x + 0.016;
-$north = $y + 0.016;
-$south = $y - 0.016;
+$east = $x - 0.024;
+$west = $x + 0.024;
+$north = $y + 0.024;
+$south = $y - 0.024
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
