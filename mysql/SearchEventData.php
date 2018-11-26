@@ -14,11 +14,10 @@ catch(PDOException $e)
 $x =$_POST['x'];
 $y =$_POST['y'];
 
-$east = $x - 0.024;
-$west = $x + 0.024;
-$north = $y + 0.024;
-$south = $y - 0.024
-
+$east = $x + 0.056;
+$west = $x - 0.056;
+$north = $y + 0.056;
+$south = $y - 0.056;
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
 $query = "SELECT lng, lat, type, hundred_block, neighbourhood FROM events_update WHERE (lng < $east AND lng > $west) AND (lat < $north AND lat > $south) LIMIT 20";
