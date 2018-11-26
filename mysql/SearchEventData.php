@@ -21,7 +21,7 @@ $south = $y - 0.024
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "SELECT lng, lat, type, hundred_block, neighbourhood FROM events_update WHERE (lng < $east AND lng > $west) AND (y < $north AND y > $south) LIMIT 20";
+$query = "SELECT lng, lat, type, hundred_block, neighbourhood FROM events_update WHERE (lng < $east AND lng > $west) AND (lat < $north AND lat > $south) LIMIT 20";
 $result = $conn->query($query);
 if($result){
   $events = $result->fetchAll(PDO::FETCH_CLASS);
