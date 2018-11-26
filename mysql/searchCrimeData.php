@@ -21,7 +21,7 @@ $south = $y - 1500;
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "SELECT x, y, type, hundred_block, neighbourhood FROM crime WHERE (x < $east AND x > $west) AND (y < $north AND y > $south) LIMIT 20";
+$query = "SELECT x, y, type, hundred_block, neighbourhood, month, day, year FROM crime WHERE (x < $east AND x > $west) AND (y < $north AND y > $south) LIMIT 20";
 $result = $conn->query($query);
 if($result){
   $crimes = $result->fetchAll(PDO::FETCH_CLASS);
