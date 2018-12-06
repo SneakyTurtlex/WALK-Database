@@ -12,11 +12,13 @@ catch(PDOException $e)
     echo "Error: " .$e->getMessage();
 }
 $uId =$_POST['userId'];
-$newHomeInfo=$_POST['homeInfo'];
+$ucn=$_POST['uCname'];
+$ucp=$_POST['uCphone'];
+$ucm=$_POST['uCmsg'];
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "UPDATE users SET address='$newHomeInfo' WHERE id = '$uId';";
+$query = "UPDATE users SET contactname='$ucn' AND contactphone='$ucp' AND contactmsg='$ucm' WHERE id = '$uId';";
 $result = $conn->query($query);
 if($result){
   echo json_encode(true);
