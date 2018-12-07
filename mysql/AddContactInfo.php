@@ -18,7 +18,7 @@ $ucm=$_POST['uCmsg'];
 
 //$query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 
-$query = "UPDATE users SET contactname='$ucn', contactphone='$ucp', contactmsg='$ucm' WHERE id = '$uId'";
+$query = "UPDATE users SET contactname='$ucn', contactphone='" . $ucp . "', contactmsg='$ucm' WHERE id = '$uId'";
 $result = $conn->query($query);
 if($result){
   echo json_encode(true);
